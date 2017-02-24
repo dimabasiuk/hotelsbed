@@ -1,0 +1,40 @@
+data:
+   image: busybox:latest
+   ports:
+     - "2291:22"
+   volumes:
+     - .:/var/www/yucel
+   links:
+     - db
+   tty: true
+
+fpm:
+  build: docker/php
+  volumes_from:
+    - data
+#  volumes:
+#    - ./docker/php/:/usr/local/etc/php/
+  expose:
+    - 9000
+  links:
+    - db
+
+nginx:
+  image: nginx:latest
+  volumes_from:
+    - data
+  ports:
+    - "8091:80"
+  volumes:
+    - ./docker/nginx/:/etc/nginx/conf.d/
+  links:
+   - fpm
+
+db:
+    image: postgres:latest
+    ports:
+      - "54323:5432"
+    environment:
+      POSTGRES_DB: yucel
+      POSTGRES_PASSWORD: yucel
+      POSTGRES_USER: yucel

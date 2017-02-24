@@ -1,0 +1,11 @@
+header {
+    min-height: 120px;
+}
+
+.btn-standart {
+    min-width: 90px;
+}
+
+.login-logo a, h4{
+    color: #D33724 !important;
+}

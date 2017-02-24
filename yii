@@ -1,0 +1,27 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Yii console bootstrap file.
+ *
+ * @link http://www.yiiframework.com/
+ * @copyright Copyright (c) 2008 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+defined('STDIN') or define('STDIN', fopen('php://stdin', 'r'));
+defined('STDOUT') or define('STDOUT', fopen('php://stdout', 'w'));
+
+require(__DIR__ . '/vendor/autoload.php');
+//environment
+require(__DIR__ . '/environment/env.php');
+require(__DIR__ . '/vendor/yiisoft/yii2/Yii.php');
+
+// Bootstrap application
+require(__DIR__ . '/config/bootstrap.php');
+
+
+$config = require(__DIR__ . '/config/console.php');
+
+$application = new yii\console\Application($config);
+$exitCode = $application->run();
+exit($exitCode);

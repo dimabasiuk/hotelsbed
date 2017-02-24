@@ -1,0 +1,31 @@
+{
+    "require": {
+        "yiisoft/yii2": "*",
+        "vlucas/phpdotenv": "^2.0",
+        "yiisoft/yii2-debug": "^2.0",
+        "bower-asset/magnific-popup": "*",
+        "bower-asset/admin-lte": "*",
+        "bower-asset/font-awesome": "^4.0",
+        "bower-asset/animate.css": "*",
+        "bower-asset/slider-revolution": "*",
+        "bower-asset/bxslider-4": "*",
+        "bower-asset/jquery.stellar": "*",
+        "codemix/yii2-localeurls": "^1.4",
+        "trntv/yii2-file-kit": "^1.2",
+        "intervention/image": "^2.1",
+        "trntv/yii2-glide": "*",
+        "kartik-v/yii2-widgets": "*",
+        "kartik-v/yii2-checkbox-x": "*",
+        "hotelbeds/hotel-api-sdk-php": "dev-master@dev"
+
+    },
+    "require-dev": {
+        "yiisoft/yii2-gii": "^2.0"
+    },
+    "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}
